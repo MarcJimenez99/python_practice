@@ -24,7 +24,21 @@ def valid_palindrome_optimized(s):
 # Makes use of two pointers and ascii values to help prevent the need
 # to build a string and using a built in function to remove non alpha
 # numerical character. 
-# 
+# First we will set our left and right ptr at the opposite end of the string.
+# Next we will create our outside while loop which will continue to iterate
+# while the leftPtr is less than our rightPtr. Next we want to check if the 
+# characters at both our leftPtr and rightPtr are alphanumeric characters. 
+# If not we want to continue to iterate and decrement the respective 
+# pointers until we hit a valid alphanumeric character. We can do this
+# by using two seperate while loops that make use of our custom alphanumeric
+# function to check whether the character is valid but also making sure
+# that the pointers never pass one another or exit the range of the string.
+# We do this by also making sure to only iterate if left < right for the
+# leftPtr and right > left for the rightPtr. Once we have valid alphanumerics
+# to compare we will then check if the two characters are equal if not 
+# immediately return false. Also at the end of the outside while loop we want
+# to iterate our leftPtr and decrement our rightPtr. 
+# Finally if we exit our loop we know that the string is a valid palindrome.
 
 def valid_palindrome(s):
     newStr = ""
